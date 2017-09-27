@@ -117,6 +117,17 @@
       <list-item v="not"/>
       <list-item v="never"/>
     </def-list>
+    <def-list n="two_part_ordinals">
+      <list-item v="eleventh"/>
+      <list-item v="twelfth"/>
+      <list-item v="thirteenth"/>
+      <list-item v="fourteenth"/>
+      <list-item v="fifteenth"/>
+      <list-item v="sixteenth"/>
+      <list-item v="seventeenth"/>
+      <list-item v="eighteenth"/>
+      <list-item v="nineteenth"/>
+    </def-list>
   </section-def-lists>
   <section-def-macros>
     <def-macro n="f_bcond" npar="2">
@@ -733,6 +744,34 @@
             <clip pos="1" side="tl" part="tags"/>
             <lit v="det.ord"/>
           </let>
+        </when>
+        <otherwise>
+          <append n="post_det">
+            <lit v=""/>
+          </append>
+        </otherwise>
+      </choose>
+    </def-macro>
+    <def-macro n="uimhreacha" npar="1">
+      <choose>
+        <when>
+          <test>
+            <and>
+              <equal>
+                <clip pos="1" side="sl" part="a_det"/>
+                <lit-tag v="det.ord"/>
+              </equal>
+              <in caseless="yes">
+                <clip pos="1" side="sl" part="lem"/>
+                <list n="two_part_ordinals"/>
+              </in>
+            </and>
+          </test>
+          <append n="post_num">
+            <lit v=" ^déag"/>
+            <lit-tag v="num.pl"/>
+            <lit v="$"/>
+          </append>
         </when>
         <otherwise>
           <append n="post_det">
