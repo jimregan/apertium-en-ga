@@ -1,0 +1,137 @@
+Index: apertium-en-ga.ga.dix
+===================================================================
+--- apertium-en-ga.ga.dix	(revision 79162)
++++ apertium-en-ga.ga.dix	(working copy)
+@@ -41,6 +41,132 @@
+     <sdef n="obj" />
+   </sdefs>
+   <pardefs>
++<pardef n="b__len">
++  <e><p><l>bh</l><r>b</r></p></e>
++</pardef>
++<pardef n="B__len">
++  <e><p><l>Bh</l><r>B</r></p></e>
++</pardef>
++<pardef n="c__len">
++  <e><p><l>ch</l><r>c</r></p></e>
++</pardef>
++<pardef n="C__len">
++  <e><p><l>Ch</l><r>C</r></p></e>
++</pardef>
++<pardef n="d__len">
++  <e><p><l>dh</l><r>d</r></p></e>
++</pardef>
++<pardef n="D__len">
++  <e><p><l>Dh</l><r>D</r></p></e>
++</pardef>
++<pardef n="f__len">
++  <e><p><l>fh</l><r>f</r></p></e>
++</pardef>
++<pardef n="F__len">
++  <e><p><l>Fh</l><r>F</r></p></e>
++</pardef>
++<pardef n="g__len">
++  <e><p><l>gh</l><r>g</r></p></e>
++</pardef>
++<pardef n="G__len">
++  <e><p><l>Gh</l><r>G</r></p></e>
++</pardef>
++<pardef n="m__len">
++  <e><p><l>mh</l><r>m</r></p></e>
++</pardef>
++<pardef n="M__len">
++  <e><p><l>Mh</l><r>M</r></p></e>
++</pardef>
++<pardef n="p__len">
++  <e><p><l>ph</l><r>p</r></p></e>
++</pardef>
++<pardef n="P__len">
++  <e><p><l>Ph</l><r>P</r></p></e>
++</pardef>
++<pardef n="s__len">
++  <e><p><l>sh</l><r>s</r></p></e>
++</pardef>
++<pardef n="S__len">
++  <e><p><l>Sh</l><r>S</r></p></e>
++</pardef>
++<pardef n="t__len">
++  <e><p><l>th</l><r>t</r></p></e>
++</pardef>
++<pardef n="T__len">
++  <e><p><l>Th</l><r>T</r></p></e>
++</pardef>
++
++<pardef n="A__ecl">
++  <e><p><l>nA</l><r>A</r></p></e>
++</pardef>
++<pardef n="E__ecl">
++  <e><p><l>nE</l><r>E</r></p></e>
++</pardef>
++<pardef n="I__ecl">
++  <e><p><l>nI</l><r>I</r></p></e>
++</pardef>
++<pardef n="O__ecl">
++  <e><p><l>nO</l><r>O</r></p></e>
++</pardef>
++<pardef n="U__ecl">
++  <e><p><l>nU</l><r>U</r></p></e>
++</pardef>
++<pardef n="Á__ecl">
++  <e><p><l>nÁ</l><r>Á</r></p></e>
++</pardef>
++<pardef n="É__ecl">
++  <e><p><l>nÉ</l><r>É</r></p></e>
++</pardef>
++<pardef n="Í__ecl">
++  <e><p><l>nÍ</l><r>Í</r></p></e>
++</pardef>
++<pardef n="Ó__ecl">
++  <e><p><l>nÓ</l><r>Ó</r></p></e>
++</pardef>
++<pardef n="Ú__ecl">
++  <e><p><l>nÚ</l><r>Ú</r></p></e>
++</pardef>
++<pardef n="a__ecl">
++  <e><p><l>n-a</l><r>a</r></p></e>
++  <e><p><l>nA</l><r>A</r></p></e>
++</pardef>
++<pardef n="e__ecl">
++  <e><p><l>n-e</l><r>e</r></p></e>
++  <e><p><l>nE</l><r>E</r></p></e>
++</pardef>
++<pardef n="i__ecl">
++  <e><p><l>n-i</l><r>i</r></p></e>
++  <e><p><l>nI</l><r>I</r></p></e>
++</pardef>
++<pardef n="o__ecl">
++  <e><p><l>n-o</l><r>o</r></p></e>
++  <e><p><l>nO</l><r>O</r></p></e>
++</pardef>
++<pardef n="u__ecl">
++  <e><p><l>n-u</l><r>u</r></p></e>
++  <e><p><l>nU</l><r>U</r></p></e>
++</pardef>
++<pardef n="á__ecl">
++  <e><p><l>n-á</l><r>á</r></p></e>
++  <e><p><l>nÁ</l><r>Á</r></p></e>
++</pardef>
++<pardef n="é__ecl">
++  <e><p><l>n-é</l><r>é</r></p></e>
++  <e><p><l>nÉ</l><r>É</r></p></e>
++</pardef>
++<pardef n="í__ecl">
++  <e><p><l>n-í</l><r>í</r></p></e>
++  <e><p><l>nÍ</l><r>Í</r></p></e>
++</pardef>
++<pardef n="ó__ecl">
++  <e><p><l>n-ó</l><r>ó</r></p></e>
++  <e><p><l>nÓ</l><r>Ó</r></p></e>
++</pardef>
++<pardef n="ú__ecl">
++  <e><p><l>n-ú</l><r>ú</r></p></e>
++  <e><p><l>nÚ</l><r>Ú</r></p></e>
++</pardef>
++
+ <pardef n="2-hiodrocsaídéfheinil__n">
+   <e><p><l>-s</l>        <r><s n="n"/><s n="f"/><s n="sg"/><s n="com"/><s n="emph"/></r></p></e>
+   <e><p><l></l>          <r><s n="n"/><s n="f"/><s n="sg"/><s n="com"/></r></p></e>
