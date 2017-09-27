@@ -126,7 +126,7 @@
             </tags>
             <lu>
               <clip side="tl" pos="1" part="lemh"/>
-              <clip side="tl" pos="1" part="prn.obj"/>
+              <lit-tag v="prn.obj"/>
               <clip side="tl" pos="1" part="pers" link-to="2"/>
               <clip side="tl" pos="1" part="gen" link-to="3"/>
               <clip side="tl" pos="1" part="nbr" link-to="4"/>

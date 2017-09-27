@@ -83,7 +83,7 @@
           <when>
             <test>
               <equal>
-                <clip pos="2" part="tense"/>
+                <clip pos="1" part="tense"/>
                 <lit-tag v="past"/>
               </equal>
             </test>
