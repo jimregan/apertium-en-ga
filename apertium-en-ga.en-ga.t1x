@@ -118,6 +118,7 @@
     <def-var n="det_type"/>
     <def-var n="adjective1"/>
     <def-var n="inner_mut"/>
+    <def-var n="inner_mut1"/>
     <def-var n="gen_chunk"/>
     <def-var n="nbr_chunk"/>
     <def-var n="cas_chunk"/>
@@ -152,6 +153,14 @@
       <list-item v="í"/>
       <list-item v="ó"/>
       <list-item v="ú"/>
+    </def-list>
+    <def-list n="cead_lenites">
+      <list-item v="b"/>
+      <list-item v="c"/>
+      <list-item v="f"/>
+      <list-item v="g"/>
+      <list-item v="m"/>
+      <list-item v="p"/>
     </def-list>
   </section-def-lists>
   <section-def-macros>
@@ -194,7 +203,7 @@
         </otherwise>
       </choose>
     </def-macro>
-    <def-macro n="determiner" npar="1">
+    <def-macro n="determiner" npar="2">
       <let>
         <var n="inner_mut"/>
         <lit-tag v="6"/>
@@ -397,10 +406,26 @@
                 <clip pos="1" side="tl" part="lem"/>
                 <lit v="a"/>
               </let>
-              <let>
-                <var n="inner_mut"/>
-                <lit-tag v="hpref"/>
-              </let>
+              <choose>
+                <when>
+                  <test>
+                    <begins-with-list caseless="yes">
+                      <clip pos="2" side="tl" part="lem"/>
+                      <list n="vowels"/>
+                    </begins-with-list>
+                  </test>
+                  <let>
+                    <var n="inner_mut"/>
+                    <lit-tag v="hpref"/>
+                  </let>
+                </when>
+                <otherwise> <!-- Might be better to replace with a placeholder, because once gone, it can't be readded -->
+                  <let>
+                    <var n="inner_mut"/>
+                    <lit v=""/>
+                  </let>
+                </otherwise>
+              </choose>
             </when>
             <when>
               <test>
@@ -462,6 +487,28 @@
           </let>
         </otherwise>
       </choose>
+    </def-macro>
+    <def-macro n="determiner2" npar="3"> <!-- rather than do everything in determiner twice, call that for the *second* word first, put the inner_mut value in inner_mut1 and call for the first word:  -->
+      <let>
+        <var n="inner_mut"/>
+        <lit v=""/>
+      </let>
+      <let>
+        <var n="inner_mut1"/>
+        <lit v=""/>
+      </let>
+      <call-macro n="determiner">
+        <with-param n="2"/>
+        <with-param n="3"/>
+      </call-macro>
+      <let>
+        <var n="inner_mut1"/>
+        <var n="inner_mut"/>
+      </let>
+      <call-macro n="determiner">
+        <with-param n="1"/>
+        <with-param n="2"/>
+      </call-macro>
     </def-macro>
     <def-macro n="comparative_adj1" npar="1">
       <let>
@@ -960,6 +1007,7 @@
         </call-macro>
         <call-macro n="determiner">
           <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="uimhreacha">
           <with-param pos="1"/>
@@ -1074,6 +1122,7 @@
         </call-macro>
         <call-macro n="determiner">
           <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="uimhreacha">
           <with-param pos="1"/>
@@ -1209,6 +1258,7 @@
         </call-macro>
         <call-macro n="determiner">
           <with-param pos="1"/>
+          <with-param pos="2"/>
         </call-macro>
         <call-macro n="uimhreacha">
           <with-param pos="1"/>
