@@ -181,7 +181,11 @@
         </when>
       </choose>
     </def-macro>
-    <def-macro n="det_no" npar="2">
+    <def-macro n="det_no" npar="1">
+      <let>
+        <var n="negative"/>
+        <lit v=""/>
+      </let>
       <choose>
         <when>
           <test>
@@ -201,6 +205,52 @@
             <lit v=""/>
           </let>
         </otherwise>
+      </choose>
+    </def-macro>
+    <def-macro n="num_count" npar="1">
+      <choose>
+        <when>
+          <test>
+            <or>
+              <equal caseless="yes">
+                <clip pos="1" side="tl" part="lem"/>
+                <lit v="aon"/>
+              </equal>
+              <equal caseless="yes">
+                <clip pos="1" side="tl" part="lem"/>
+                <lit v="ocht"/>
+              </equal>
+              <equal caseless="yes">
+                <clip pos="1" side="tl" part="lem"/>
+                <lit v="ochtó"/>
+              </equal>
+            </or>
+          </test>
+          <let>
+            <clip pos="1" side="tl" part="tags"/>
+            <lit-tag v="num.hpref"/>
+          </let>
+        </when>
+      </choose>
+      <choose>
+        <when>
+          <test>
+            <or>
+              <equal>
+                <clip pos="1" side="sl" part="lem"/>
+                <lit v="two"/>
+              </equal>
+              <equal>
+                <clip pos="1" side="sl" part="lem"/>
+                <lit v="twelve"/>
+              </equal>
+            </or>
+          </test>
+          <let>
+            <clip pos="1" side="tl" part="lemh"/>
+            <lit v="dó"/>
+          </let>
+        </when>
       </choose>
     </def-macro>
     <def-macro n="determiner" npar="2">
@@ -1003,7 +1053,6 @@
       <action>
         <call-macro n="det_no">
           <with-param pos="1"/>
-          <with-param pos="2"/>
         </call-macro>
         <call-macro n="determiner">
           <with-param pos="1"/>
@@ -1118,7 +1167,6 @@
       <action>
         <call-macro n="det_no">
           <with-param pos="1"/>
-          <with-param pos="2"/>
         </call-macro>
         <call-macro n="determiner">
           <with-param pos="1"/>
@@ -1254,7 +1302,6 @@
       <action>
         <call-macro n="det_no">
           <with-param pos="1"/>
-          <with-param pos="2"/>
         </call-macro>
         <call-macro n="determiner">
           <with-param pos="1"/>
