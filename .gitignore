@@ -1,0 +1,5 @@
+*~
+*.bin
+Makefile
+Makefile.in
+.deps/
